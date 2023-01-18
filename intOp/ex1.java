@@ -141,16 +141,18 @@ class brains
     
     void pallindrome() {
         System.out.println("Enter a number: ");
-        final String next = this.input.next();
-        String string = "";
-        for (int i = next.length() - 1; i >= 0; --i) {
-            string += next.charAt(i);
+        int num = input.nextInt();
+        int temp = num;
+        int rev=0;
+        while (temp!=0) {
+            rev=rev*10+temp%10;
+            temp/=10;
         }
-        if (next.equals(string)) {
-            System.out.println(next + " is a Pallindrome.");
+        if (rev==num) {
+            System.out.println(num + " is a Pallindrome.");
             return;
         }
-        System.out.println(next + " is not a Pallindrome.");
+        System.out.println(num + " is not a Pallindrome.");
     }
     
     void hbd() {
