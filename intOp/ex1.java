@@ -78,12 +78,12 @@ class brains
         System.out.println("Enter a number: ");
         final int nextInt = this.input.nextInt();
         boolean b = true;
-        for (int i = 0; i < nextInt; ++i) {
-            for (int j = i; j < nextInt; ++j) {
-                if (i * j == nextInt) {
-                    b = false;
-                    break;
-                }
+        if (nextInt%2==0||nextInt%3==0) {
+            b = false;        
+        }
+        for (int i = 5; i*i < nextInt; i+=6) {
+            if (nextInt%i==0 || nextInt%i+2==0) {
+                b = false;
             }
         }
         if (b) {
