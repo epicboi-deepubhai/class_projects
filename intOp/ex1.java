@@ -96,29 +96,28 @@ class brains
     void factorial() {
         System.out.println("Enter a number: ");
         final int nextInt = this.input.nextInt();
-        System.out.println("Factorial of " + nextInt + " is " + this.factorialbrains(nextInt));
+        System.out.println("Factorial of " + nextInt + " is " + this.factorialbrains(nextInt, 1));
     }
     
-    int factorialbrains(final int n) {
-        if (n != 1) {
-            return n * this.factorialbrains(n - 1);
-        }
-        return n;
+    int factorialbrains(final int n, final int k) {
+        if(n==1){return k;}
+        return factorialbrains(n-1, n*k);
     }
     
     void fibno() {
         System.out.println("Enter no. of elements req in fib series: ");
         final int nextInt = this.input.nextInt();
         String string = "";
-        int n = 0;
-        int n2 = 1;
         for (int i = 0; i < nextInt; ++i) {
-            string = string + " " + n;
-            final int n3 = n + n2;
-            n = n2;
-            n2 = n3;
+            string+= fibnobrains(i)+" ";
         }
         System.out.println("Series upto " + nextInt + " is: " + string);
+    }
+    int fibnobrains(int n){
+        if(n<2){
+            return n;
+        }
+        return fibnobrains(n-1)+fibnobrains(n-2);
     }
     
     void armstrong() {
