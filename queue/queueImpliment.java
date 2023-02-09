@@ -1,4 +1,7 @@
 package class_projects.queue;
+
+import java.util.Scanner;
+
 interface queueInterface {
     void disp();
     void enqueue(int n);
@@ -40,7 +43,8 @@ class FixedQueue implements queueInterface{
         System.out.println("Front: "+ front);
         for (int i = front; i <= rear; i++) {
             System.out.print(q[i]+" ");
-        }System.out.println("Rear: "+rear);
+        }System.out.println();
+        System.out.println("Rear: "+rear);
     }
 }
 
@@ -96,7 +100,55 @@ class circularQueue implements queueInterface{
 
 
 public class queueImpliment {
+    public static void driver(queueInterface q){
+        int i = 0;
+        Scanner input = new Scanner(System.in);
+        System.out.println("1.Enqueue\n2.Dequeue\n3.Display\n4.Exit");
+        while(i!=4){
+            System.out.print("Your choice: ");
+            i = input.nextInt();
+            switch (i) {
+                case 1:{
+                    System.out.print("Enter an item to enqueue: ");
+                    int item = input.nextInt();
+                    q.enqueue(item);;
+                    continue;
+                }
+                case 2:{
+                    i = q.dequeue();
+                    if(i!=-1){
+                        System.out.println(i+" is dequeued");
+                    }
+                    continue;
+                }
+                case 3:{
+                    System.out.println("The queue is: ");
+                    q.disp();
+                    continue;
+                }
+                case 4:{
+                    System.out.println("Byebye :)");
+                    continue;
+                }
+                default: {
+                    System.out.println("Invalid CHoice :(");
+                    continue;
+                }
+            }
+        }
+        input.close();
+    }
     public static void main(String[] args) {
+        queueInterface q;
+        Scanner i = new Scanner(System.in);
+        System.out.println("Do you want a fixedQueue or a circularQueue?(1/?)");
+        String ch = i.next();
 
+        if (ch=="1") {
+            q = new FixedQueue();
+        }else{q=new circularQueue();}
+                
+        driver(q);
+        i.close();
     }
 }

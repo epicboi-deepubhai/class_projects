@@ -47,7 +47,7 @@ class op{
 
     public static student[] initialize(student[] s){
         for (int i = 0; i < s.length; i++) {
-            try (Scanner input = new Scanner(System.in)) {
+                Scanner input = new Scanner(System.in);                
                 s[i] = new student();
 
                 System.out.print("Enter the name of the student: ");
@@ -62,9 +62,8 @@ class op{
                 System.out.print("Enter marks of student in Chemistry: ");
                 int chem = input.nextInt();
                 
-                System.out.println("\nENtry made for "+name+"\n");
+                System.out.println("ENtry made for "+name+"\n");
                 s[i].init(name, mafs,phy,chem);
-            }
         }
         return s;
     }

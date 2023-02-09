@@ -19,7 +19,7 @@ class rect extends shape
     
     rect() {
         this.input = new Scanner(System.in);
-        System.out.println("Enter: length: ");
+        System.out.print("Enter length: ");
         final int nextInt = this.input.nextInt();
         this.length = (float)nextInt;
         this.breadth = (float)nextInt;

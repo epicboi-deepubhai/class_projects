@@ -21,7 +21,7 @@ class brains
         int i = 0;
         System.out.println("1. Check even/odd\n2. Check Prime\n3. Factorial\n4. Fibno\n5. Check Armstrong\n6. Pallindrome\n8.Exit ");
         while (i != 8) {
-            System.out.println("Enter your choice: ");
+            System.out.print("Enter your choice: ");
             i = this.input.nextInt();
             switch (i) {
                 case 1: {
@@ -65,7 +65,7 @@ class brains
     }
     
     void checkEven() {
-        System.out.println("Enter a number: ");
+        System.out.print("Enter a number: ");
         final int nextInt = this.input.nextInt();
         if (nextInt % 2 != 0) {
             System.out.println(nextInt + " is odd.");
@@ -75,7 +75,7 @@ class brains
     }
     
     void checkPrime() {
-        System.out.println("Enter a number: ");
+        System.out.print("Enter a number: ");
         final int nextInt = this.input.nextInt();
         boolean b = true;
         if (nextInt%2==0||nextInt%3==0) {
@@ -94,7 +94,7 @@ class brains
     }
     
     void factorial() {
-        System.out.println("Enter a number: ");
+        System.out.print("Enter a number: ");
         final int nextInt = this.input.nextInt();
         System.out.println("Factorial of " + nextInt + " is " + this.factorialbrains(nextInt, 1));
     }
@@ -105,7 +105,7 @@ class brains
     }
     
     void fibno() {
-        System.out.println("Enter no. of elements req in fib series: ");
+        System.out.print("Enter no. of elements req in fib series: ");
         final int nextInt = this.input.nextInt();
         String string = "";
         for (int i = 0; i < nextInt; ++i) {
@@ -121,7 +121,7 @@ class brains
     }
     
     void armstrong() {
-        System.out.println("Enter a number: ");
+        System.out.print("Enter a number: ");
         final int nextInt = this.input.nextInt();
         int n = 0;
         int n2 = 0;
@@ -139,7 +139,7 @@ class brains
     }
     
     void pallindrome() {
-        System.out.println("Enter a number: ");
+        System.out.print("Enter a number: ");
         int num = input.nextInt();
         int temp = num;
         int rev=0;
