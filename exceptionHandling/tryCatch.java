@@ -1,4 +1,4 @@
-package class_projects.nestedTry;
+package class_projects.exceptionHandling;
 
 public class tryCatch {
     public static void main(String[] args) {
