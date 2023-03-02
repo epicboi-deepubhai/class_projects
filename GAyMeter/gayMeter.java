@@ -89,7 +89,6 @@ public class gayMeter {
         try {
             header();
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         driver();
